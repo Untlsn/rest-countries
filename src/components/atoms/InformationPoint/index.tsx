@@ -1,13 +1,16 @@
 import React from 'react';
+import * as S from './style';
+import { InformationPointProps } from '~/components/atoms/InformationPoint/types';
 
-interface InformationPointProps {
-  name: string,
-  data: string
-}
 
-const InformationPoint = ({ name, data }: InformationPointProps) => {
+const InformationPoint = ({ name, data, loCase }: InformationPointProps) => {
   return (
-    <p><b>{name}:</b> {data}</p>
+    <S.Wrapper>
+      <b>{name}:</b>
+      <S.Case $case={loCase ? 'lowercase' : 'capitalize'}>
+        {data}
+      </S.Case>
+    </S.Wrapper>
   );
 };
 

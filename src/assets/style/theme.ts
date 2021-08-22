@@ -1,0 +1,17 @@
+export type Theme = typeof light;
+
+export const light = {
+  colors: {
+    main: '#ffffff',
+    header: '#ffffff',
+    text: '#000000',
+  },
+};
+
+export const dark: Theme = {
+  colors: {
+    main: '#202d36',
+    header: '#2b3743',
+    text: '#ffffff',
+  },
+};

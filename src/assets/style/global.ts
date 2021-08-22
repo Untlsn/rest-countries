@@ -14,10 +14,16 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     margin: 0;
     min-height: 100vh;
-    background-color: #f0fafb;
+    background-color: ${({ theme }) => theme.colors.main};
+    color: ${({ theme }) => theme.colors.text};
   }
   a {
     color: inherit;
     text-decoration: none;
+  }
+  
+  button {
+    color: inherit;
+    &:hover { cursor: pointer }
   }
 `;

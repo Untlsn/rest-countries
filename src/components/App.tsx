@@ -1,23 +1,18 @@
-import React, { useState } from 'react';
-import Logo from '~/assets/images/logo.png';
-import * as S from './App.style';
-import prevDef from '~/helpers/prevDef';
+import React from 'react';
 import { GlobalStyle } from '~/assets/style/global';
+import { ThemeProvider } from 'styled-components';
+import useBoolState from '~/hooks/useBoolState';
+import { dark, light } from '~/assets/style/theme';
+import Header from '~/components/organisms/Header';
 
 const App = () => {
-  const [count, changeCount] = useState(0);
-
+  const [darkMode, switchDarkMode] = useBoolState();
   return (
-    <>
+    <ThemeProvider theme={darkMode ? dark : light}>
       <GlobalStyle />
-      <S.Wrapper
-        onClick={() => changeCount(old => old + 1)}
-        onContextMenu={prevDef(() => changeCount(0))}>
-        <S.Image src={Logo}/>
-        <p>Hello Vite + Preact Comp!</p>
-        <p>Just write in react, run in preact</p>
-        <p>Hooks work without issues: {count}</p>
-      </S.Wrapper>
-    </>
+      <Header onSwitchTheme={switchDarkMode} />
+    </ThemeProvider>
   );
 };
+
+export default App;
