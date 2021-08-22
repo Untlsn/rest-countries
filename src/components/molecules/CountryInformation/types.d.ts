@@ -1,11 +1,5 @@
-export interface CountryInformationProps {
+import { County } from '~/types/County';
+
+export interface CountryInformationProps extends County {
   name: string
-  nativeName: string
-  population: number
-  region: string
-  subregion: string
-  capital: string
-  topLevelDomain: string[]
-  currencies: { name: string; }[]
-  languages: { name: string; }[]
 }

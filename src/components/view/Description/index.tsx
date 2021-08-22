@@ -1,11 +1,12 @@
 import React from 'react';
 import * as S from './style';
 import { BsArrowLeft } from 'react-icons/bs';
-import { DescriptionProps } from './types';
 import CountyInformation from '~/components/molecules/CountryInformation';
 import { useFetchCountry } from '~/components/view/Description/hooks';
+import { useParams } from 'react-router-dom';
 
-const Description = ({ countryName }: DescriptionProps) => {
+const Description = () => {
+  const countryName = useParams<{ country: string }>().country;
   const country = useFetchCountry(countryName);
 
   return (
