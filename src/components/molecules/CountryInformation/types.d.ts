@@ -1,5 +1,5 @@
-import { County } from '~/types/County';
+import { Country } from '~/types/Country';
 
-export interface CountryInformationProps extends County {
+export interface CountryInformationProps extends Country {
   name: string
 }

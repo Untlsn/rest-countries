@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { County } from '~/types/County';
+import { Country } from '~/types/Country';
 import { getRestPoint } from '~/components/view/Description/data';
 
 export const useFetchCountry = (countryName: string) => {
-  const [country, setCountry] = useState<County>();
+  const [country, setCountry] = useState<Country>();
 
   useEffect(() => {
     fetch(getRestPoint(countryName))

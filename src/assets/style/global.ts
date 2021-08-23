@@ -18,12 +18,16 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
   }
   a {
-    color: inherit;
     text-decoration: none;
   }
-  
-  button {
+  button:hover { 
+    cursor: pointer;
+  }
+  a, button {
     color: inherit;
-    &:hover { cursor: pointer }
+  }
+  
+  ul {
+    list-style: none;
   }
 `;
